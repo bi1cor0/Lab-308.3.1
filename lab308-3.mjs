@@ -27,15 +27,23 @@ while(prime = false){ //set up while loop for i being a counter that will count 
 console.log(i);
 
 // Part 3 'Feeling Loopy' 
+//create a grid of four cells, that contain strings. use an empty string variable c, to go over the csv string and then log everything in the comma into a cell.
+// when reaching a comma, reset string c to zero.
+// when reaching a \n, go back to the first cell.
 
-let cell1 =``
-const csv = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26`;
+let cell1 ='';
+let cell2='';
+let cell3 ='';
+let cell4 ='';
+let c =''; //empty string reader
+const csv = `ID,Name,Occupation,Age`;
 
-for (const c of csv) {
-	if (c == `\n`) {
-		continue;
-	}
-    console.log(c)
+//try to do a for loop within a for loop. 
+for (c of csv) { //for loop with string c of csv reading through the string.
+    if (c !== `,`) { //have the string c go through the csv string until it reaches a comma.
+        cell1 += c; //Concatenate and asign cell1 with string c. 
+        c = ``; //reset string c to zero.
+    }
 }
 
-console.log(csv)
+console.log(cell1)
